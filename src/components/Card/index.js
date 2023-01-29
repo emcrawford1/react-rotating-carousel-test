@@ -12,20 +12,20 @@ const GithubContainer = ({ githubLink, githubLogo }) => {
   )
 }
 
-const DeployedContainer = ({deployedStatus, deployedLink, deployedLogo}) => {
 
+const DeployedContainer = ({deployedStatus, deployedLink, deployedLogo}) => {
   if(deployedStatus) {
-    <div class='deployed-container'>
+    return(
+      <div class='deployed-container'>
       <a class='deployed-link' href={deployedLink}>
         <img class='deployed-img' src={deployedLogo} alt='deployed logo'/>
         <div class='deployed-title'>Deployed</div>
       </a>
     </div>
+    )
   }
-
   else return <></>
 }
-
 
 
 export const Card = ({src, imageClass, title, description, githubLink, githubLogo, deployedStatus, deployedLink, deployedLogo}) => {
@@ -52,7 +52,6 @@ export const Card = ({src, imageClass, title, description, githubLink, githubLog
 
     </div>
   </div>
-
 )}
 
 
