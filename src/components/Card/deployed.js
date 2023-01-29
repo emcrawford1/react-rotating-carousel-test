@@ -1,12 +1,12 @@
-import {deployedContainerClass, deployedLinkClass, deployedImgClass, deplolyedTitleClass} from './styling'
+import {deployedContainerStyle, deployedLinkStyle, deployedImgStyle, deplolyedTitleStyle} from './styling'
 
 export const DeployedContainer = ({deployedLink, deployedLogo}) => {
   if(deployedLink === '') {
     return(
-      <div class={deployedContainerClass}>
-      <a class={deployedLinkClass} href={deployedLink}>
-        <img class={deployedImgClass} src={deployedLogo} alt='deployed logo'/>
-        <div class={deplolyedTitleClass}>Deployed</div>
+      <div style={deployedContainerStyle}>
+      <a style={deployedLinkStyle} href={deployedLink}>
+        <img style={deployedImgStyle} src={deployedLogo} alt='deployed logo'/>
+        <div style={deplolyedTitleStyle}>Deployed</div>
       </a>
     </div>
     )
