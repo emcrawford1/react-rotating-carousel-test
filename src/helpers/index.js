@@ -8,4 +8,4 @@ const getClasses = classObj => {
   return classList;
 }
 
-export {getClasses};
+export { getClasses };
