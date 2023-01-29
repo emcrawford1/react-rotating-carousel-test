@@ -1,34 +1,8 @@
 import { getClasses } from "../../helpers/index.js";
+import { GithubContainer } from "./github.js";
+import { DeployedContainer } from "./deployed.js";
 
-
-const GithubContainer = ({ githubLink, githubLogo }) => {
-  return (
-    <div class='github-container'>
-    <a class='github-link' href={githubLink} target='_blank' rel='noopener noreferrer'>
-      <img class='github-img' src={githubLogo} alt='github Logo'/>
-      <div class='github-title'>GitHub</div>
-    </a>
-  </div>
-  )
-}
-
-
-const DeployedContainer = ({deployedStatus, deployedLink, deployedLogo}) => {
-  if(deployedStatus) {
-    return(
-      <div class='deployed-container'>
-      <a class='deployed-link' href={deployedLink}>
-        <img class='deployed-img' src={deployedLogo} alt='deployed logo'/>
-        <div class='deployed-title'>Deployed</div>
-      </a>
-    </div>
-    )
-  }
-  else return <></>
-}
-
-
-export const Card = ({src, imageClass, title, description, githubLink, githubLogo, deployedStatus, deployedLink, deployedLogo}) => {
+export const Card = ({src, imageClass, title, description, githubLink, githubLogo, deployedLink = '', deployedLogo = ''}) => {
   
   const imageClassNames = getClasses(imageClass);
   
@@ -44,7 +18,6 @@ export const Card = ({src, imageClass, title, description, githubLink, githubLog
         githubLogo={githubLogo}
       />
       <DeployedContainer 
-        deployedStatus={deployedStatus}
         deployedLink={deployedLink}
         deployedLogo={deployedLogo}
       />

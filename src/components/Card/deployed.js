@@ -1,7 +1,7 @@
 import {deployedContainerClass, deployedLinkClass, deployedImgClass, deplolyedTitleClass} from './styling'
 
-export const DeployedContainer = ({deployedStatus, deployedLink, deployedLogo}) => {
-  if(deployedStatus) {
+export const DeployedContainer = ({deployedLink, deployedLogo}) => {
+  if(deployedLink === '') {
     return(
       <div class={deployedContainerClass}>
       <a class={deployedLinkClass} href={deployedLink}>
