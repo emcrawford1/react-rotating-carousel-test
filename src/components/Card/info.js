@@ -1,9 +1,19 @@
-import { info, projectInfo, projectTitle, projectDescr, linkContainer, } from './styling';
+import {
+  info,
+  projectInfo,
+  projectTitle,
+  projectDescr,
+  linkContainer,
+} from "./styling";
 
-export const ProjectInfo = ({ githubLink, gitHubDeployed, title, description }) => {
-  
+export const ProjectInfo = ({
+  githubLink,
+  gitHubDeployed,
+  title,
+  description,
+}) => {
   return (
-    <div style={Object.assign({},info, projectInfo)}>
+    <div style={Object.assign({}, info, projectInfo)}>
       <div style={projectTitle}>{title}</div>
       <div style={projectDescr}>{description}</div>
       <div style={linkContainer}>
@@ -11,5 +21,5 @@ export const ProjectInfo = ({ githubLink, gitHubDeployed, title, description }) 
         <>{gitHubDeployed}</>
       </div>
     </div>
-    )
-}
+  );
+};
