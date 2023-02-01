@@ -32,13 +32,22 @@ const projectDescr = {
   fontFamily: "Arial, Helvettica, sans-serif",
 };
 
-const githubLink = {
+const githubContainerStyle = {
+
+}
+
+const githubLinkStyle = {
   textDecoration: "none",
   color: "#00CCFF",
   fontSize: "13px",
 };
 
-const deployedTitle = {
+const deployedContainerStyle = {
+  display: 'flex',
+  flexDirection: 'column',
+}
+
+const deployedTitleStyle = {
   fontFamily: "Arial, Helvettica, sans-serif",
   textAlign: "center",
   fontSize: "11px",
@@ -46,7 +55,7 @@ const deployedTitle = {
   color: "#3399FF",
 };
 
-const githubTitle = {
+const githubTitleStyle = {
   fontFamily: "Arial, Helvettica, sans-serif",
   textAlign: "center",
   fontSize: "11px",
@@ -54,7 +63,7 @@ const githubTitle = {
   color: "#3399FF",
 };
 
-const deployedLink = {
+const deployedLinkStyle = {
   textDecoration: "none",
   color: "#0072de",
   fontSize: "13px",
@@ -69,14 +78,18 @@ const linkContainer = {
   paddingBottom: '25px',
 }
 
-const deployedImg = {
+const deployedImgStyle = {
   width: '88px',
   height: '90px',
 }
 
-const githubImg = {
+const githubImgStyle = {
   width: '92px',
   height: '90px',
+}
+
+const hover = {
+  transform: 'scale(1.1)'
 }
 
 export {
@@ -84,11 +97,14 @@ export {
   card,
   projectTitle,
   projectDescr,
-  githubLink,
-  deployedTitle,
-  githubTitle,
-  deployedLink,
+  githubContainerStyle,
+  githubLinkStyle,
+  deployedContainerStyle,
+  deployedTitleStyle,
+  githubTitleStyle,
+  deployedLinkStyle,
   linkContainer,
-  deployedImg,
-  githubImg,
+  deployedImgStyle,
+  githubImgStyle,
+  hover,
 };
