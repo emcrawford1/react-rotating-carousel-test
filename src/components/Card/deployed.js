@@ -2,20 +2,29 @@ import {
   deployedContainerStyle,
   deployedLinkStyle,
   deployedImgStyle,
-  deplolyedTitleStyle,
+  deployedTitleStyle,
+  hoverStyle,
 } from "./styling";
 
-export const DeployedContainer = ({ deployedLink, deployedLogo }) => {
+export const DeployedContainer = ({
+  deployedLink,
+  deployedLogo,
+  handleMouseEnter,
+  handleMouseLeave,
+  isHover,
+}) => {
   if (deployedLink === "") {
     return (
       <div style={deployedContainerStyle}>
         <a style={deployedLinkStyle} href={deployedLink}>
+          onMouseEnter={handleMouseEnter}
+          onMouseLeave={handleMouseLeave}
           <img
-            style={deployedImgStyle}
+            style={isHover ? (Object.assign({}, deployedImgStyle, hoverStyle)) : deployedImgStyle}
             src={deployedLogo}
             alt="deployed logo"
           />
-          <div style={deplolyedTitleStyle}>Deployed</div>
+          <div style={deployedTitleStyle}>Deployed</div>
         </a>
       </div>
     );
