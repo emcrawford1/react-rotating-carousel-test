@@ -17,7 +17,6 @@ export const Card = ({
   const [isHover, setIsHover] = useState(false);
   const handleMouseEnter = () => setIsHover(true);
   const handleMouseExit = () => setIsHover(false);
-
   const imageClassNames = getClasses(imageClass);
 
   return (
@@ -32,12 +31,21 @@ export const Card = ({
         title={title}
         description={description}
         githubContainer={
-          <GithubContainer githubLink={githubLink} githubLogo={githubLogo} />
+          <GithubContainer
+            githubLink={githubLink}
+            githubLogo={githubLogo}
+            handleMouseEnter={handleMouseEnter}
+            handleMouseExit={handleMouseExit}
+            isHover={isHover}
+          />
         }
         deployedContainer={
           <DeployedContainer
             deployedLink={deployedLink}
             deployedLogo={deployedLogo}
+            handleMouseEnter={handleMouseEnter}
+            handleMouseExit={handleMouseExit}
+            isHover={isHover}
           />
         }
       />
