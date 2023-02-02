@@ -16,11 +16,20 @@ export const DeployedContainer = ({
   if (deployedLink === "") {
     return (
       <div style={deployedContainerStyle}>
-        <a style={deployedLinkStyle} href={deployedLink}>
+        <a
+          style={deployedLinkStyle}
+          href={deployedLink}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           onMouseEnter={handleMouseEnter}
           onMouseLeave={handleMouseLeave}
           <img
-            style={isHover ? (Object.assign({}, deployedImgStyle, hoverStyle)) : deployedImgStyle}
+            style={
+              isHover
+                ? Object.assign({}, deployedImgStyle, hoverStyle)
+                : deployedImgStyle
+            }
             src={deployedLogo}
             alt="deployed logo"
           />
