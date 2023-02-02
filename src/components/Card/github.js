@@ -3,9 +3,16 @@ import {
   githubLinkStyle,
   githubImgStyle,
   githubTitleStyle,
+  hoverStyle,
 } from "./styling";
 
-export const GithubContainer = ({ githubLink, githubLogo }) => {
+export const GithubContainer = ({
+  githubLink,
+  githubLogo,
+  handleMouseEnter,
+  handleMouseLeave,
+  isHover,
+}) => {
   return (
     <div style={githubContainerStyle}>
       <a
@@ -14,7 +21,17 @@ export const GithubContainer = ({ githubLink, githubLogo }) => {
         target="_blank"
         rel="noopener noreferrer"
       >
-        <img style={githubImgStyle} src={githubLogo} alt="github Logo" />
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}
+        <img
+          style={
+            isHover
+              ? Object.assign({}, githubImgStyle, hoverStyle)
+              : githubImgStyle
+          }
+          src={githubLogo}
+          alt="github Logo"
+        />
         <div style={githubTitleStyle}>GitHub</div>
       </a>
     </div>
