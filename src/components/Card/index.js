@@ -16,7 +16,7 @@ export const Card = ({
 }) => {
   const [isHover, setIsHover] = useState(false);
   const handleMouseEnter = () => setIsHover(true);
-  const handleMouseExit = () => setIsHover(false);
+  const handleMouseLeave = () => setIsHover(false);
   const imageClassNames = getClasses(imageClass);
 
   return (
@@ -35,7 +35,7 @@ export const Card = ({
             githubLink={githubLink}
             githubLogo={githubLogo}
             handleMouseEnter={handleMouseEnter}
-            handleMouseExit={handleMouseExit}
+            handleMouseLeave={handleMouseLeave}
             isHover={isHover}
           />
         }
@@ -44,7 +44,7 @@ export const Card = ({
             deployedLink={deployedLink}
             deployedLogo={deployedLogo}
             handleMouseEnter={handleMouseEnter}
-            handleMouseExit={handleMouseExit}
+            handleMouseLeave={handleMouseLeave}
             isHover={isHover}
           />
         }

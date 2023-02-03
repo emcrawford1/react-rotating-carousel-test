@@ -88,7 +88,7 @@ const githubImgStyle = {
   height: '90px',
 }
 
-const hover = {
+const hoverStyle = {
   transform: 'scale(1.1)'
 }
 
@@ -106,5 +106,5 @@ export {
   linkContainer,
   deployedImgStyle,
   githubImgStyle,
-  hover,
+  hoverStyle,
 };
