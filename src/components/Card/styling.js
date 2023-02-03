@@ -108,3 +108,11 @@ export {
   githubImgStyle,
   hoverStyle,
 };
+
+
+/*
+TO DO
+*** I want to be able to either have the user specify the width & height of each image, or 
+have it auto-calculated.  In the non-react form, I have the images set to a fixed height &
+width.  However, this will not work for a library. ***
+*/
