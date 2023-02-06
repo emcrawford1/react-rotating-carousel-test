@@ -1,12 +1,13 @@
-import { getClasses } from "../../helpers/index.js";
 import { ProjectInfo } from "./info.js";
 import { GithubContainer } from "./github.js";
 import { DeployedContainer } from "./deployed.js";
 import { useState } from "react";
 
+//Consider just passing down these settings rather than setting them in styling.js
+import { image1Right, imageSettings } from "./styling.js";
+
 export const Card = ({
   src,
-  imageClass,
   title,
   description,
   githubLink,
@@ -17,14 +18,13 @@ export const Card = ({
   const [isHover, setIsHover] = useState(false);
   const handleMouseEnter = () => setIsHover(true);
   const handleMouseLeave = () => setIsHover(false);
-  const imageClassNames = getClasses(imageClass);
 
   return (
     <div id="outer-card" class="card">
       <img
         id="front-image"
         src={src}
-        class={imageClassNames}
+        style={Object.assign({}, image1Right, imageSettings)}
         alt="Front card"
       />
       <ProjectInfo
