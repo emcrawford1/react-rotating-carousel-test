@@ -92,7 +92,24 @@ const hoverStyle = {
   transform: 'scale(1.1)'
 }
 
+let animation_delay = 5;
+
+const image1Right = {
+  transform: 'scale(1.174)',
+  animation: 'front-image-rotate forwards',
+  animationDelay: `${animation_delay}s`
+}
+
+//Possibly change so that the user can import these settings or they set to the default image size
+const imgSettings = {
+  height: '300px',
+  width: '300px',
+  borderRadius: '2px',
+}
+
 export {
+  image1Right,
+  imgSettings,
   info,
   card,
   projectTitle,
