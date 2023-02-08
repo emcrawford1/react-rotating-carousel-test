@@ -1,3 +1,4 @@
+import React from "react";
 import { ProjectInfo } from "./info.js";
 import { GithubContainer } from "./github.js";
 import { DeployedContainer } from "./deployed.js";
