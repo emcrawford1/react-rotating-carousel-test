@@ -1,3 +1,5 @@
+// Styling sheet for Card components
+
 const info = {
   height: "300px",
   width: "300px",
