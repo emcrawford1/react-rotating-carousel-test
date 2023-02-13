@@ -1,5 +1,4 @@
 import React from "react";
-import { Card } from "../Card";
 import { ImageContainer } from "./ImageContainer";
 
 export const InnerContainer = ({ carouselItems }) => {
