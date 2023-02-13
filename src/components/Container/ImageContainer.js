@@ -8,7 +8,7 @@ export const ImageContainer = ({ imgArr, index }) => {
       id={`image-${index + 1}`}
       src={imgArr.source}
       alt={imgArr.title}
-      style={{ tbd: "tbd" }}
+      style={imgArr.style}
     />
   );
 
