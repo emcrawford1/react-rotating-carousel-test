@@ -1,14 +1,20 @@
 import React from "react";
+import { Card } from "../Card";
+
 
 export const ImageContainer = ({ project, index }) => {
-  return (
-  <div id={`image-${index + 1}container`}>
-    <img 
-    id={`image-${index+1}`}
-    src={project.pic}
-    alt={project.name}
-    style={{'tbd': 'tbd'}}
+  const img = (
+    <img
+      id={`image-${index + 1}`}
+      src={project.pic}
+      alt={project.name}
+      style={{ tbd: "tbd" }}
     />
-  </div>
-  )
+  );
+
+  if(index === 0) {
+    return <Card />
+  }
+
+  return <div id={`image-${index + 1}container`}>{img}</div>;
 };

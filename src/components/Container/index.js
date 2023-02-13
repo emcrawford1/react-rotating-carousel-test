@@ -4,8 +4,8 @@ import { Card } from "../Card";
 export const InnerContainer = ({ projects, gitHubLogo, deployedLogo }) => {
   return (
     <Card
-      src={projects.src}
-      title={projects.title}
+      src={projects.pic}
+      title={projects.name}
       description={projects.description}
       githubLink={projects.githubLink}
       deployedLink={projects.deployedLink}
