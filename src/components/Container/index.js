@@ -4,9 +4,10 @@ import { ImageContainer } from "./ImageContainer";
 export const InnerContainer = ({ carouselItems }) => {
   return (
     <>
-      {carouselItems.map((item, index) => {
+      {
+      carouselItems.map((item, index) => {
 
-        //If the user wishes to add a card to the carousel, the first object in the array should have a key 
+        // If the user wishes to add a card to the carousel, the first object in the array should have a key 
         // named 'card' set to true.  Otherwise the key will not exist or it will be set to false.
         let cardFlag = carouselItems[0].card ? true : false
 
@@ -16,9 +17,7 @@ export const InnerContainer = ({ carouselItems }) => {
         return (
           <ImageContainer
             index={index}
-            src={item.source}
-            alt={item.title}
-            style={item.style}
+            item={item}
             cardFlag={cardFlag}
           />
         );
