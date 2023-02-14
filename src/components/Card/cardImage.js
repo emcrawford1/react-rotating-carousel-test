@@ -2,7 +2,6 @@ import React from "react";
 import {
   cardImageContainerStyle,
   cardImageLinkStyle,
-  imageLinkImgStyle,
   cardImageTitleStyle,
   cardImageImgStyle,
   hoverStyle,
@@ -10,10 +9,40 @@ import {
 
 export const CardImage = ({
   imgLink,
-  imgLogo,
+  imgPic,
+  imgText,
+  userStyleContainer,
+  userStyleImage,
   handleMouseEnter,
   handleMouseLeave,
   isHover,
 }) => {
-  return <></>;
+
+  // Combine user specified styles with default styles
+  Object.assign(cardImageImgStyle, userStyleImage);
+  Object.assign(cardImageContainerStyle, userStyleContainer);
+   
+  return (
+       <div style={cardImageContainerStyle}>
+        <a
+          style={cardImageLinkStyle}
+          href={imgLink}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          onMouseEnter={handleMouseEnter}
+          onMouseLeave={handleMouseLeave}
+          <img
+            style={
+              isHover
+                ? Object.assign({}, cardImageImgStyle, hoverStyle)
+                : cardImageImgStyle
+            }
+            src={imgPic}
+            alt={imgText}
+          />
+          <div style={cardImageTitleStyle}>{imgText}</div>
+        </a>
+      </div>
+  )
 };
