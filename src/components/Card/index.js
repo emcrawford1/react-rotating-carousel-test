@@ -9,10 +9,6 @@ export const Card = ({
   src,
   title,
   description,
-  githubLink,
-  githubLogo,
-  deployedLink = "",
-  deployedLogo = "",
   images,
 }) => {
   const [isHover, setIsHover] = useState(false);
