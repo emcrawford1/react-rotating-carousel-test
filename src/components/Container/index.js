@@ -1,8 +1,11 @@
 import React from "react";
 import { ImageContainer } from "./ImageContainer";
 import { carousel, carousel_outer_container } from "./styling";
+import { calculateAnimations } from "./animations";
 
 export const InnerContainer = ({ carouselItems }) => {
+  //Returns an object with the animation styles for each component
+  const animations = calculateAnimations(carouselItems);
 
   // Check if meta-object contains style items.  If so, assign to style variables
   const carouselStyle = carouselItems[0].carouselStyle
@@ -15,18 +18,20 @@ export const InnerContainer = ({ carouselItems }) => {
   return (
     <div style={Object.assign({}, carousel, carouselStyle)}>
       <div style={Object.assign({}, carousel_outer_container, outerContStyle)}>
-        {carouselItems.map((item, index) => {
-          // If the user wishes to add a card to the carousel, the first object in the array should have a key
-          // named 'card' set to true.  Otherwise the key will not exist or it will be set to false.
-          let cardFlag = carouselItems[0].card ? true : false;
+        <div style={Object.assign({}, animations.innerContainer, animations.imgRotator)}>
+          {carouselItems.map((item, index) => {
+            // If the user wishes to add a card to the carousel, the first object in the array should have a key
+            // named 'card' set to true.  Otherwise the key will not exist or it will be set to false.
+            let cardFlag = carouselItems[0].card ? true : false;
 
-          //Skip the first item since it will contain an object with meta data about the carousel items
-          if (index === 0) return <></>;
+            //Skip the first item since it will contain an object with meta data about the carousel items
+            if (index === 0) return <></>;
 
-          return (
-            <ImageContainer index={index} item={item} cardFlag={cardFlag} />
-          );
-        })}
+            return (
+              <ImageContainer index={index} item={item} cardFlag={cardFlag} />
+            );
+          })}
+        </div>
       </div>
     </div>
   );
