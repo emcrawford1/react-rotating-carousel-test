@@ -1,14 +1,27 @@
-/* Will need to calculate the rotation of each carousel item based on how many items exist.  
-   We will attempt to do this by:
-    1) Passing in the carouselItems array (metadata is in the index 0; data starts in index 1)
-    2) Calculate the number of items in the carouselItems array
-    3) Determine how much the container object will need to rotate to display the next item
-    4) Determine how much each item will need to counter-rotate to continue facing the user
-    5) Add these amounts to each carousel item.
-    6) Return the carouselItems array
-
-*/
 
 export const calculateAnimations = carouselItems => {
+
+  //Metadata is not included in count
+  const itemCount = carouselItems.length - 1;
+  const rotationAmt = 360/itemCount;
+  const parentOffset = rotationAmt/2;
+  let childOffset = parentOffset
+
+  const carouselItemsWithAnimations = carouselItems.map((item, index) => {
+
+    if(index !== 0) {
+      item['rotationFrom'] = childOffset - rotationAmt;
+      item['rotationTo'] = rotationAmt - childOffset;
+      item['offset'] = childOffset 
+      childOffset += parentOffset;
+    }
+    
+    return item;
+  })
+
+  carouselItemsWithAnimations[0]['parentOffset'] = parentOffset;
+  carouselItemsWithAnimations[0]['rotationAmout'] = rotationAmt;
+
+  return carouselItemsWithAnimations;
 
 }
