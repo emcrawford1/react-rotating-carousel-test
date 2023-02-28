@@ -1,16 +1,16 @@
 import React from "react";
 
-export const ImageContainer = ({ imgArr, index, cardFlag }) => {
+export const ImageContainer = ({ item, index, cardFlag }) => {
   const img = (
     <img
-      id={`image-${index + 1}`}
-      src={imgArr.source}
-      alt={imgArr.title}
-      style={imgArr.style}
+      id={`image-${index}`}
+      src={item.source}
+      alt={item.title}
+      style={item.style}
     />
   );
 
-  return <div id={`image-${index + 1}container`}>{img}</div>;
+  return <div id={`image-${index}-container`}>{img}</div>;
 };
 
 
