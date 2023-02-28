@@ -1,7 +1,7 @@
 import React from "react";
 import { ImageContainer } from "./ImageContainer";
 import { carousel, carousel_outer_container } from "./styling";
-import { calculateAnimations } from "./animations";
+import { calculateAnimations } from "../../helpers/animationEngine";
 
 export const InnerContainer = ({ carouselItems }) => {
   //Returns an object with the animation styles for each component
@@ -17,7 +17,7 @@ export const InnerContainer = ({ carouselItems }) => {
 
   return (
     <div style={Object.assign({}, carousel, carouselStyle)}>
-      <div style={Object.assign({}, carousel_outer_container, outerContStyle)}>
+      <div class={carouselItems[0].imgRotatorClass} style={Object.assign({}, carousel_outer_container, outerContStyle)}>
         <div style={Object.assign({}, animations.innerContainer, animations.imgRotator)}>
           {carouselItems.map((item, index) => {
             // If the user wishes to add a card to the carousel, the first object in the array should have a key
@@ -40,5 +40,5 @@ export const InnerContainer = ({ carouselItems }) => {
 /*Note - for future reference.  The meta data in carouselItems[0] will need to contain:
   1) A 'card' flag boolean value, indicating whether or not the user wishes to add a card to the front carousel item. 
   2) 'Style' variables if the user wishes to overwrite any of the default styling
-  3) TBD
+  3) Certain animation attributes such as animation duration
 */
