@@ -1,6 +1,6 @@
 import React from 'react';
 import { Component } from 'react';
-import { InnerContainer } from './components/InnerContainer';
+import { InnerContainer } from './components/Carousel';
 import { calculateAnimations } from './helpers/animationEngine';
 import Burger_Logo from "../src/images/Burger_Logo.jpeg";
 import Flight_Logo from "../src/images/Flight_Logo.jpeg";
@@ -13,6 +13,7 @@ let projects = [
   {
     carouselStyle: {},
     outerContStyle: {},
+    key: 'none'
   },
   {
     name: "Flight!  The Boring Guessing Game.",
@@ -21,6 +22,7 @@ let projects = [
     source: Flight_Logo,
     deployed: "https://emcrawford1.github.io/Word-Guess-Game/",
     github: "https://github.com/emcrawford1/Word-Guess-Game",
+    key: "https://github.com/emcrawford1/Word-Guess-Game",
     style: {height: '400px', width: '400px'}
   },
   {
@@ -29,6 +31,7 @@ let projects = [
       "Burger app demonstrating the manipulation of DOM elements and storing data about those elements in a database.",
     source: Burger_Logo,
     github: "https://github.com/emcrawford1/burger",
+    key: "https://github.com/emcrawford1/burger",
     style: {height: '400px', width: '400px'}
   },
   {
@@ -38,6 +41,7 @@ let projects = [
     source: Trivia_Logo,
     deployed: "https://emcrawford1.github.io/TriviaGame/",
     github: "https://github.com/emcrawford1/TriviaGame",
+    key: "https://github.com/emcrawford1/TriviaGame",
     style: {height: '400px', width: '400px'}
   },
   {
@@ -46,11 +50,13 @@ let projects = [
       "This quasi-social media app will help you plan events with friends - seeing their invitation status in real-time.",
     source: Planit,
     github: "https://github.com/emcrawford1/Project1",
+    key: "https://github.com/emcrawford1/Project1",
     style: {height: '400px', width: '400px'}
   }
 ]
 
 let animations = calculateAnimations(projects);
+
 
 function App() {
   return (

@@ -14,5 +14,5 @@ export const ImageContainer = ({ item, index, cardFlag }) => {
 };
 
 
-//Consider merging the user's styling preferences with embedded styling.  The embedded styling will contain certain defaults.
-//However, these can be overwritten by the user.
+// Todo:
+// 1) Add cardFlag logic
